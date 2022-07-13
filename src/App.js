@@ -1,24 +1,24 @@
-import logo from './logo.svg';
+import { useEffect } from 'react';
+import { ThemeProvider } from '@mui/material';
+import theme from './styles/theme'
 import './App.css';
+import { Container } from '@mui/system';
+import Navbar from './Components/Navbar';
+import Banner from './Components/Banner';
 
 function App() {
+
+  useEffect(() => {
+    document.title = 'React Material UI -Home';
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+        <Container>
+          <Navbar/>
+          <Banner/>
+        </Container>
+    </ThemeProvider>
   );
 }
 
