@@ -15,7 +15,8 @@ export const NavbarHeader = styled(Typography)(() =>({
     padding:'4px',
     flexGrow: 1,
     fontSize:'4rem',
-    color:Color.secondary
+    color:Color.secondary,
+    fontFamily:`cursive`
 }));
 
 export const MyList = styled(List)(({ type })=>({
