@@ -21,17 +21,20 @@ export const BannerContent = styled(Box)(()=>({
     flexDirection:'column',
     justifyContent:'center',
     maxWidth: 420,
-    padding: '30px'
+    padding: '30px',
+    [theme.breakpoints.down('sm')]:{
+        alignItems:'center'
+    }
 }))
-export const BannerImage=styled('img')(({src,theme})=>({
+export const BannerImage=styled('img')(({src, theme})=>({
     src:`url(${src})`,
     width: '500px',
     [theme.breakpoints.down('md')]: {
         width:'350px'
     },
     [theme.breakpoints.down('sm')]: {
-        width: '120px',
-        height: '300px'
+        width: '420px',
+        height: '330px'
     }
 }));
 

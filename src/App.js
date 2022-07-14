@@ -5,6 +5,7 @@ import './App.css';
 import { Container } from '@mui/system';
 import Navbar from './Components/Navbar';
 import Banner from './Components/Banner';
+import Products from './Components/Products';
 
 function App() {
 
@@ -17,6 +18,7 @@ function App() {
         <Container>
           <Navbar/>
           <Banner/>
+          <Products/>
         </Container>
     </ThemeProvider>
   );
