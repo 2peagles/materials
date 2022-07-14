@@ -1,8 +1,10 @@
-import styled from "@emotion/system";
+import styled from "@emotion/styled";
 import { Color } from "../theme";
-import { IconButton } from '@mui/material';
-
-export const Product = styled((Box)()=>({
+import { Box } from "@mui/system";
+import { IconButton, Button } from '@mui/material';
+import { slideInBottom, slideInRight } from '../../animation/index'
+;
+export const Product = styled(Box)(({ theme })=>({
     display:'flex',
     justifyContent:'center',
     alignItems:'center',
@@ -13,24 +15,58 @@ export const Product = styled((Box)()=>({
 }));
 
 export const ProductImage =styled('img')(({src,theme}) => ({
-    src:`url`,
-    width:'100%',
-    background:color.light_grey,
+    src:`url(${src})`,
+    // width:'100%',
+    width:'350px',
+    height:'300px',
+    // background:Color.light_grey,
     padding:'10px',
-    [theme.breakpoint.down('md')] :{
+    [theme.breakpoints.down('md')] :{
         width:'80%',
         padding:'24px',
     }
 }));
-export const ProductActionButton =styled(IconBUtton)(()=>({
+export const ProductActionButton = styled(IconButton)(()=>({
     background:Color.white,
     margin:4,
 }))
-export const ProductfavButton =styled(ProductActionButton)(()=>(({isFav, theme})=>({
+export const ProductfavButton = styled(ProductActionButton)(({isFav, theme})=>({
     color:isFav ? Color.primary :Color.light,
     [theme.breakpoints.up('md')] :{
         position:'absolute',
-        right:0,
-        top:0,
+        right:'5%',
+        top:"5%",
     },
-})));
+}));
+export const ProductAddToCart = styled(Button, {
+    shouldForwardProp:(prop)=> prop !== 'show',
+})(({show,theme}) =>({
+    width:'120px',
+    fontSize:'absolute',
+    [theme.breakpoints.up('md')]:{
+        position:'absolute',
+        bottom:'2%',
+        width:'300px',
+        padding:'10px 5px',
+        animation:
+          show && `${slideInBottom} 0.5s cubic-bezier(0.250,0.460,0.450,0.949) both`,
+    },
+    background:Color.primary,
+    opacity:0.9,
+}));
+export const ProductMetaWrapper = styled(Box)(({theme})=>({
+    padding:4,
+    display:'flex',
+    flexDirection:'column',
+    alignItems:'center'
+}));
+export const ProductActionsWrapper = styled(Box)(({ show, theme }) => ({
+    [theme.breakpoints.up('md')]: { 
+        display: show ? 'visible' : 'none',
+        position :'absolute',
+        right: '5%',
+        top:'25%',
+        aniimation: 
+            show && `${slideInRight} 0.5s cubic-bezier(0.250,0.460,0.450,0.949) both`,
+      }
+}));

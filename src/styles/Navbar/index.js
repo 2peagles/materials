@@ -27,11 +27,11 @@ export const MyList = styled(List)(({ type })=>({
     marginTop: '4'
 }))
 export const ActionsIconsContainerDesktop = styled(Box)(()=>({
-    flexGrow:0
+    flexGrow:0,
 }))
 export const ActionsIconsContainerMobile = styled(Box)(() => ({
     display:'flex',
-    background: Color.shaft,
+    background: Color.primary,
     position: 'fixed',
     bottom:0,
     left:0,
