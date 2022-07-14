@@ -1,3 +1,4 @@
+import { lighten } from 'polished';
 import { createTheme } from '@mui/material/styles';
 export const Color = {
     // complemtary
@@ -25,8 +26,27 @@ palette: {
                  disableRipple:true,
                  disableElevation: true
             }
-        }
-    }
-}
+        },
+        MyShopButton: {
+            styleOverrides:{
+                root: {
+                    color: Color.white,
+                },
+                primary: {
+                    background:Color.primary,
+                    "&:hover": {
+                        background: lighten(0.05, Color.primary),
+                    },
+                },
+                light:{
+                    background:Color.light,
+                    "&:hover":{
+                        background:lighten(0.05, Color.light)
+                    },
+                },
+            },
+        },
+   },
+},
 });
 export default theme;

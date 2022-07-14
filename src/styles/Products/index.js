@@ -19,11 +19,12 @@ export const ProductImage =styled('img')(({src,theme}) => ({
     // width:'100%',
     width:'350px',
     height:'300px',
-    // background:Color.light_grey,
+    // background:Color.black,
     padding:'10px',
     [theme.breakpoints.down('md')] :{
-        width:'80%',
-        padding:'24px',
+        height:'150px',
+        width:'90%',
+        padding:'20px',
     }
 }));
 export const ProductActionButton = styled(IconButton)(()=>({
@@ -31,7 +32,7 @@ export const ProductActionButton = styled(IconButton)(()=>({
     margin:4,
 }))
 export const ProductfavButton = styled(ProductActionButton)(({isFav, theme})=>({
-    color:isFav ? Color.primary :Color.light,
+    color:isFav ? Color.primary : Color.dark,
     [theme.breakpoints.up('md')] :{
         position:'absolute',
         right:'5%',
@@ -46,7 +47,7 @@ export const ProductAddToCart = styled(Button, {
     [theme.breakpoints.up('md')]:{
         position:'absolute',
         bottom:'2%',
-        width:'300px',
+        width:'350px',
         padding:'10px 5px',
         animation:
           show && `${slideInBottom} 0.5s cubic-bezier(0.250,0.460,0.450,0.949) both`,

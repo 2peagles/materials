@@ -1,6 +1,5 @@
-import { Typography } from '@mui/material';
+import { Button, Box,Typography } from '@mui/material';
 import { styled } from '@mui/material/styles';
-import { Box } from '@mui/system';
 import theme, { Color } from '../theme';
 
 export const BannerContainer = styled(Box)(()=>({
@@ -33,8 +32,8 @@ export const BannerImage=styled('img')(({src, theme})=>({
         width:'350px'
     },
     [theme.breakpoints.down('sm')]: {
-        width: '420px',
-        height: '330px'
+        width: '320px',
+        height: '230px'
     }
 }));
 
@@ -55,4 +54,24 @@ export const BannerDescription = styled(Typography)(({theme}) => ({
         fontSize: '1.15',
         marginBottom: '1.5rem',
     }
+}));
+export const BannerShopButton =styled(Button, {
+    shouldForwardProp:(prop) => prop !== 'color',
+    name:"MyShopButton",
+    slot:'Root',
+    overridesResolver:(props,styles) =>[
+        styles.root,
+        props.Color === 'primary ' && styles.primary,
+        props.Color === 'light' && styles.light,
+    ],
+    })(({theme}) =>({
+        padding: '20px 0px',
+        color:Color.white,
+        background: Color.primary,
+        fontWeight:'bold',
+        fontSize: '16px',
+        [theme.breakpoints.down('sm') ] :{
+            padding:'10px 20px',
+            fontSize:'14px'
+        }
 }));
