@@ -3,11 +3,13 @@ import { MyList, ActionsIconsContainerMobile, ActionsIconsContainerDesktop } fro
 import ShoppingBagTwoToneIcon from '@mui/icons-material/ShoppingBagTwoTone';
 import PersonIcon from '@mui/icons-material/Person';
 import FavoriteIcon from '@mui/icons-material/Favorite';
-import Search from "@mui/icons-material/Search";
+import SearchIcon from "@mui/icons-material/Search";
+import { useUIContext } from "../../context/ui";
 import { Color } from "../../styles/theme";
 
 export default function Actions({matches}){
     const Component = matches ? ActionsIconsContainerMobile : ActionsIconsContainerDesktop;
+    const { setShowSearchBox } = useUIContext()
     return(
         <Component
         sx={{
@@ -30,7 +32,7 @@ export default function Actions({matches}){
                             color:matches && Color.secondary
                         }}
                     >
-                        <Search />
+                        <SearchIcon  onClick={()=> setShowSearchBox(true)}/>
                     </ListItemIcon>
                 </ListItemButton>
             <ListItemButton 

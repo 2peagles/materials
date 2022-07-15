@@ -5,6 +5,8 @@ import { Stack } from '@mui/material';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import ShareIcon from '@mui/icons-material/Share';
 import FItScreenIcon from '@mui/icons-material/FitScreen';
+import useDialogModal from '../../hooks/useDialogModal';
+import ProductDetail from '../ProductDetail';
 
 export default function SingleProductDesktop({ product, matches }) {
     const [showOptions,setShowOptions]=useState(false);
@@ -14,6 +16,8 @@ export default function SingleProductDesktop({ product, matches }) {
     const handleMouseLeave = ()=>{
         setShowOptions(false);
     }
+    const [ProductDetailDialog, showProductDetailDialog, closeProductDetailDialog]
+        = useDialogModal(ProductDetail);
 return (
         <>
         <Product onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
@@ -32,12 +36,13 @@ return (
                             <ShareIcon color='primary' />
                         </ProductActionButton>
                         <ProductActionButton>
-                            <FItScreenIcon color='primary' />
+                        <FItScreenIcon color='primary' onClick={() => showProductDetailDialog()} />
                         </ProductActionButton>
                     </Stack>
                 </ProductActionsWrapper>
             </Product>
         <ProductMeta product={product} matches={matches} />
+        <ProductDetailDialog product={product} />
     </>
     )
 }

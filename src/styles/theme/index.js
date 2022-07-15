@@ -1,5 +1,6 @@
-import { lighten } from 'polished';
 import { createTheme } from '@mui/material/styles';
+import { lighten } from 'polished';
+
 export const Color = {
     // complemtary
 primary:'#ea1577',
@@ -25,7 +26,7 @@ palette: {
             defaultProps: {
                  disableRipple:true,
                  disableElevation: true
-            }
+            },
         },
         MyShopButton: {
             styleOverrides:{

@@ -8,6 +8,8 @@ import Products from './Components/Products';
 import './App.css';
 import Footer from './Components/Footer';
 import NavDrawer from './Components/NavDrawer';
+import { UIProvider } from './context/ui';
+import SearchBox from './Components/Search';
 
 function App() {
 
@@ -17,7 +19,13 @@ function App() {
 
   return (
     <ThemeProvider theme={theme}>
-        <Container>
+        <Container 
+        disableGutters
+        maxWidth="xl"
+        sx={{
+          background: "#fff",
+        }}>
+          <UIProvider>
           <Navbar/>
           <Banner/>
           <Box display='flex'  justifyContent='center' sx={{ p: 4}}>
@@ -28,6 +36,8 @@ function App() {
           <Products/>
           <Footer/>
           <NavDrawer/>
+          <SearchBox/>
+        </UIProvider>
         </Container>
     </ThemeProvider>
   );

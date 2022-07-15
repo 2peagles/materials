@@ -1,8 +1,7 @@
 import { styled } from "@mui/material/styles";
-import {List, Typography } from "@mui/material";
+import {List, Typography, IconButton} from "@mui/material";
 import { Box } from '@mui/system';
 import { Color } from '../theme';
-
 
 export const NavbarContainer = styled(Box)(()=>({
     display:'flex',
@@ -39,4 +38,10 @@ export const ActionsIconsContainerMobile = styled(Box)(() => ({
     alignItems:'center',
     ZInex:99,
     borderTop: `1px solid ${Color.border}`
+}));
+export const DrawerCloseButton = styled(IconButton)(()=>({
+    position: 'aboslute',
+    top:10,
+    left:210,
+    zIndex:1999,
 }));
