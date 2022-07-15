@@ -1,6 +1,7 @@
 import { Button, Box,Typography } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import theme, { Color } from '../theme';
+import { lighten } from 'polished';
 
 export const BannerContainer = styled(Box)(()=>({
     display: 'flex',
@@ -27,7 +28,8 @@ export const BannerContent = styled(Box)(()=>({
 }))
 export const BannerImage=styled('img')(({src, theme})=>({
     src:`url(${src})`,
-    width: '500px',
+    width: '490px',
+    marginRight:'30px',
     [theme.breakpoints.down('md')]: {
         width:'350px'
     },
@@ -59,15 +61,17 @@ export const BannerShopButton =styled(Button, {
     shouldForwardProp:(prop) => prop !== 'color',
     name:"MyShopButton",
     slot:'Root',
-    overridesResolver:(props,styles) =>[
+    overRidesResolver:(props,styles) =>[
         styles.root,
         props.Color === 'primary ' && styles.primary,
-        props.Color === 'light' && styles.light,
+        // props.Color === 'light' && styles.light,
     ],
     })(({theme}) =>({
         padding: '20px 0px',
         color:Color.white,
         background: Color.primary,
+        "&:hover": {
+            background: lighten(0.05,Color.primary)},
         fontWeight:'bold',
         fontSize: '16px',
         [theme.breakpoints.down('sm') ] :{

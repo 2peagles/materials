@@ -17,26 +17,17 @@ export default function NavDrawer(){
 
     return(
         <>
-            {/* {drawerOpen && (
-                <DrawerCloseButton onClick={() => setDrawerOpen(false)}>
-                    <CloseIcon
-                        sx={{
-                            fontSize: '2.5rem',
-                            color:Color.secondary,
-                        }}
-                    />
-                </DrawerCloseButton> )} */}
         <Drawer open={drawerOpen}>  
                 {drawerOpen && (
                     <DrawerCloseButton onClick={() => setDrawerOpen(false)}>
                         <CloseIcon
                             sx={{
                                 fontSize: '2.5rem',
-                                background: Color.primary
+                                color: Color.primary
                             }}
                         />
                     </DrawerCloseButton>)}   
-            <List>
+            <List sx={{mt:7}}>
                 <ListItemButton>
                     <ListItemText>Home</ListItemText>
                 </ListItemButton>

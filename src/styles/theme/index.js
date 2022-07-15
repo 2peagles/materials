@@ -12,7 +12,7 @@ white:'#fff',
 black:'#000'
 }
 
-const theme = createTheme ({
+const theme = createTheme({
 palette: {
     primary: {
         main: Color.primary,
@@ -36,15 +36,15 @@ palette: {
                 primary: {
                     background: `${Color.primary}`,
                     "&:hover": {
-                        background: lighten(0.05, Color.primary),
+                        background: lighten(0.05,Color.primary)
                     },
                 },
-                // dark:{
-                //     background:`${Color.dark}`,
-                //     "&:hover":{
-                //         background:lighten(0.05, Color.dark)
-                //     },
-                // },
+                dark:{
+                    background:`${Color.dark}`,
+                    "&:hover":{
+                        background:lighten(0.05, Color.dark)
+                    },
+                },
             },
         },
    },

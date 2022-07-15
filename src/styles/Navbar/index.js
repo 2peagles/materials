@@ -40,9 +40,8 @@ export const ActionsIconsContainerMobile = styled(Box)(() => ({
     borderTop: `1px solid ${Color.border}`
 }));
 export const DrawerCloseButton = styled(IconButton)(()=>({
-    position: 'aboslute',
+   position:'absolute',
     top:10,
-    left:'250px',
-    zIndex:2000,
-    color:Color.primary,
+    left:'230px',
+    zIndex:2
 }));

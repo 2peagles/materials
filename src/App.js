@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
-import { ThemeProvider, Typography } from '@mui/material';
+import { ThemeProvider } from '@mui/system';
+import { Typography, Container,Box  } from '@mui/material';
 import theme from './styles/theme'
-import { Container, Box } from '@mui/system';
 import Navbar from './Components/Navbar';
 import Banner from './Components/Banner';
 import Products from './Components/Products';
