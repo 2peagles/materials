@@ -12,7 +12,7 @@ export default function NavbarDesktop({ matches }) {
                     <ListItemText primary='Children' />
                     <ListItemText primary='Accessories' />
                 </MyList>
-             <Actions matches={matches} />
+            <Actions matches={matches} />
           </NavbarContainer>
     );
 }

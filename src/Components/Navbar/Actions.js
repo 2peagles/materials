@@ -44,13 +44,10 @@ export default function Actions({matches}){
                     sx={{
                         display:'flex',
                         justifyContent:'center',
-                            color: matches && Color.secondary,
+                        color: matches && Color.secondary,
                     }}
                 >
-                        <FavoriteIcon sx={{
-                            color:Color.black, "&:hover": {
-                                color: Color.dark }                         
-                            }}/>
+                        <FavoriteIcon/>
                 </ListItemIcon>
             </ListItemButton>
             <ListItemButton
@@ -65,8 +62,7 @@ export default function Actions({matches}){
                         color: matches && Color.secondary
                     }}
                 >
-                        <PersonIcon   sx={{ color:Color.black, "&:hover": {
-                            color: Color.dark } }} />
+                        <PersonIcon   />
                 </ListItemIcon>
             </ListItemButton>
             <ListItemButton
@@ -81,8 +77,7 @@ export default function Actions({matches}){
                          color: matches && Color.secondary
                     }}
                 >
-                        <ShoppingBagTwoToneIcon sx={{  color:Color.black, "&:hover": {
-                            color: Color.dark }  }}/> 
+                        <ShoppingBagTwoToneIcon/> 
                 </ListItemIcon>
             </ListItemButton>
             </MyList>
