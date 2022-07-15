@@ -6,9 +6,8 @@ export const Color = {
 primary:'#ea1577',
 secondary:'#15EA88',
 // tetradic
-light:'#E2EA15' ,//yellow
-dark:'#1D15EA', //dark blue
-
+light:'#EB62A9' ,//light pink
+dark:'#0796AD', //dark blue
 white:'#fff',
 black:'#000'
 }
@@ -16,38 +15,38 @@ black:'#000'
 const theme = createTheme ({
 palette: {
     primary: {
-        main: Color.primary
+        main: Color.primary,
     },
     secondary: {
-        main: Color.secondary
+        main: Color.secondary,
     },
     components: {
-        MuiButtonprops:{
+        MuiButton:{
             defaultProps: {
                  disableRipple:true,
-                 disableElevation: true
+                 disableElevation: true,
             },
         },
+    },
         MyShopButton: {
             styleOverrides:{
                 root: {
                     color: Color.white,
                 },
                 primary: {
-                    background:Color.primary,
+                    background: `${Color.primary}`,
                     "&:hover": {
                         background: lighten(0.05, Color.primary),
                     },
                 },
-                light:{
-                    background:Color.light,
-                    "&:hover":{
-                        background:lighten(0.05, Color.light)
-                    },
-                },
+                // dark:{
+                //     background:`${Color.dark}`,
+                //     "&:hover":{
+                //         background:lighten(0.05, Color.dark)
+                //     },
+                // },
             },
         },
    },
-},
 });
 export default theme;

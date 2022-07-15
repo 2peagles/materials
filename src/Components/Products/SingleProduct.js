@@ -1,6 +1,6 @@
-import {Product,ProductActionButton,ProductActionsWrapper,ProductAddToCart,ProductfavButton,ProductImage } from '../../styles/Products/index';
+import {Product,ProductActionButton,ProductActionsWrapper,ProductAddToCart,ProductfavButton,ProductImage } from '../../styles/Products';
 import ProductMeta from './ProductMeta';
-import { Stack } from '@mui/material';
+import { Stack,Tooltip } from '@mui/material';
 import Favorite from '@mui/icons-material/Favorite';
 import ShareIcon from '@mui/icons-material/Share';
 import FItScreenIcon from '@mui/icons-material/FitScreen';
@@ -8,28 +8,30 @@ import useDialogModal from '../../hooks/useDialogModal';
 import ProductDetail from '../ProductDetail';
 
 export default function SingleProduct({product, matches}) {
-    const [ProductDetailDialog, showProductDetailDialog, closeProductDetailDialog] 
-    = useDialogModal(ProductDetail);
+    const [ProductDetailDialog, showProductDetailDialog, closeProductDialog]=useDialogModal(ProductDetail);
+
     return(
         <>
-        <Product>
+            <Product>
             <ProductImage src={product.image}/>
             <ProductMeta product={product} matches={matches} />
-            <ProductActionsWrapper>
-                <Stack direction='row'>
+                <ProductActionsWrapper>
+                <Stack direction={matches ? 'row' : 'column'}>
                     <ProductfavButton isFav={0}>
-                        <Favorite />
+                            <Favorite color='primary' />
                     </ProductfavButton>
                     <ProductActionButton>
-                        <ShareIcon color='primary'/>
+                        <ShareIcon/>
                     </ProductActionButton>
-                        <ProductActionButton onClick={()=> showProductDetailDialog()}>
-                            <FItScreenIcon color='primary' />
+                        <ProductActionButton onClick={ ( ) => showProductDetailDialog()}>
+                            <Tooltip placement='left' title='Full View'>
+                                <FItScreenIcon />
+                            </Tooltip>
                         </ProductActionButton>
                 </Stack>
             </ProductActionsWrapper>
         </Product>
-        <ProductAddToCart variant='contained'>
+            <ProductAddToCart variant='contained'>
             Add to cart 
         </ProductAddToCart>
         <ProductDetailDialog product={product}/>

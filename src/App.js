@@ -21,7 +21,7 @@ function App() {
     <ThemeProvider theme={theme}>
         <Container 
         disableGutters
-        maxWidth="xl"
+        maxWidth="xxl"
         sx={{
           background: "#fff",
         }}>

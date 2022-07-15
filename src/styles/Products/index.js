@@ -29,10 +29,11 @@ export const ProductImage =styled('img')(({src,theme}) => ({
 }));
 export const ProductActionButton = styled(IconButton)(()=>({
     background:Color.white,
+    color:Color.dark,
     margin:4,
 }))
 export const ProductfavButton = styled(ProductActionButton)(({isFav, theme})=>({
-    color:isFav ? Color.primary : Color.dark,
+    color:isFav ? Color.primary: Color.dark,
     [theme.breakpoints.up('md')] :{
         position:'absolute',
         right:'5%',

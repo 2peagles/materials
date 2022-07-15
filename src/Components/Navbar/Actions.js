@@ -16,7 +16,7 @@ export default function Actions({matches}){
                 display: 'flex',
                 marginTop: '4',
                 justifyContent: 'center',
-                padding: '2px 8px'
+                padding: '2px 8px',
         }}
         >
             <MyList type="row">

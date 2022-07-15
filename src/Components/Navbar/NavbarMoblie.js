@@ -4,7 +4,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import { useUIContext } from "../../context/ui";
 import Actions from "./Actions";
 
-export default function NavbarMobile ({ matches}){
+export default function NavbarMobile ({matches}){
     const {setDrawerOpen} = useUIContext()
     return (
         <NavbarContainer>
@@ -14,7 +14,7 @@ export default function NavbarMobile ({ matches}){
             <NavbarHeader textAlign={'center'} variant={'h4'}>
                 Title
             </NavbarHeader>
-            <Actions matchs={matches} />
+            <Actions matches={matches} />
         </NavbarContainer>
     )
 }

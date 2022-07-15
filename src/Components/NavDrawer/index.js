@@ -22,7 +22,7 @@ export default function NavDrawer(){
                     <CloseIcon
                         sx={{
                             fontSize: '2.5rem',
-                            color: lighten(0.9, Color.secondary),
+                            color:Color.secondary,
                         }}
                     />
                 </DrawerCloseButton> )} */}
@@ -32,7 +32,7 @@ export default function NavDrawer(){
                         <CloseIcon
                             sx={{
                                 fontSize: '2.5rem',
-                                color: Color.secondary
+                                background: Color.primary
                             }}
                         />
                     </DrawerCloseButton>)}   

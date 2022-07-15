@@ -10,23 +10,22 @@ export default function Footer(){
     return(
         <Box 
         sx={{
-            background:Color.dark ,
-            color:Color.white,
-            p: { xs: 4, md:10},
-            pt:12,
-            pb:12,
+            background:Color.secondary,
+            color:Color.black,
+            p: { xs: 4, md:7},
             fontSize:{xs:'12px',md:'14px'}
         }}>
-            <Grid container spcaing={2} justifyContent='center'>
-                <Grid item md={6} lg={4}>
+            <Grid container spacing={2} justifyContent='center'>
+                <Grid item md={6} lg={4} >
                     <FooterTitle variant='body1'>about us</FooterTitle>
                     <Typography variant='capition2'>
                         Lorem ipsum dolor sit amet. Et temporibus quos et aliquid similique non 
                         voluptate dolore. Ut omnis dolorem qui molestiae ullam qui consectetur 
                         atque et corrupti molestiae ut adipisci quibusdam et velit harum.
                     </Typography>
-                    <Box xs={{
+                    <Box sx={{
                         mt:4,
+                        mb:4,
                         color:Color.primary
                     }}>
                         <FacebookIcon sx={{ mr:1}}/> 
@@ -34,7 +33,7 @@ export default function Footer(){
                         <TwitterIcon /> 
                     </Box>
                     </Grid>
-                    <Grid item md={6} lg={2}>
+                    <Grid item md={6} lg={2} sx={{ ml:2, mr:4}}>
                         <FooterTitle variant='body1'>Information</FooterTitle>
                         <List>
                             <ListItemText>
