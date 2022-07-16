@@ -77,7 +77,7 @@ export default function Actions({matches}){
                          color: matches && Color.secondary
                     }}
                 >
-                        <ShoppingBagTwoToneIcon/> 
+                        <ShoppingBagTwoToneIcon /> 
                 </ListItemIcon>
             </ListItemButton>
             </MyList>

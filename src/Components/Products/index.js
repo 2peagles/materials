@@ -4,6 +4,7 @@ import { useMediaQuery } from "@mui/material";
 import { products } from "../../data";
 import SingleProduct  from "./SingleProduct";
 import SingleProductDesktop  from "./SIngleProductDesktop";
+
 export default function Products(){
     const theme = useTheme ();
     const matches = useMediaQuery(theme.breakpoints.down('md'));

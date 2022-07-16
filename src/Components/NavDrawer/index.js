@@ -33,15 +33,15 @@ export default function NavDrawer(){
                 </ListItemButton>
                 <MIddleDivider />
                 <ListItemButton>
-                    <ListItemText>Categories</ListItemText>
+                    <ListItemText>Mens</ListItemText>
                 </ListItemButton>
                 <MIddleDivider />
                 <ListItemButton>
-                    <ListItemText>Products</ListItemText>
+                    <ListItemText>Womens</ListItemText>
                 </ListItemButton>
                 <MIddleDivider />
                 <ListItemButton>
-                    <ListItemText>About Us</ListItemText>
+                    <ListItemText>Childrens</ListItemText>
                 </ListItemButton>
                 <MIddleDivider />
                 <ListItemButton>

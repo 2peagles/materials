@@ -1,3 +1,4 @@
+import React from 'react';
 import {Product,ProductActionButton,ProductActionsWrapper,ProductAddToCart,ProductfavButton,ProductImage } from '../../styles/Products';
 import ProductMeta from './ProductMeta';
 import { Stack,Tooltip } from '@mui/material';
@@ -7,13 +8,14 @@ import FItScreenIcon from '@mui/icons-material/FitScreen';
 import useDialogModal from '../../hooks/useDialogModal';
 import ProductDetail from '../ProductDetail';
 
-export default function SingleProduct({product, matches}) {
+
+export default function SingleProduct({product, matches, onAddToCart}) {
     const [ProductDetailDialog, showProductDetailDialog, closeProductDialog]=useDialogModal(ProductDetail);
 
     return(
         <>
+            <ProductImage src={product.image} alt={product.name} />
             <Product>
-            <ProductImage src={product.image}/>
             <ProductMeta product={product} matches={matches} />
                 <ProductActionsWrapper>
                 <Stack direction={matches ? 'row' : 'column'}>
@@ -23,7 +25,7 @@ export default function SingleProduct({product, matches}) {
                     <ProductActionButton>
                         <ShareIcon/>
                     </ProductActionButton>
-                        <ProductActionButton onClick={ ( ) => showProductDetailDialog()}>
+                        <ProductActionButton onClick={( ) => showProductDetailDialog()}>
                             <Tooltip placement='left' title='Full View'>
                                 <FItScreenIcon />
                             </Tooltip>
@@ -31,10 +33,10 @@ export default function SingleProduct({product, matches}) {
                 </Stack>
             </ProductActionsWrapper>
         </Product>
-            <ProductAddToCart variant='contained'>
+            <ProductAddToCart variant='contained' onClick={()=> onAddToCart(product.id, 1)}>
             Add to cart 
         </ProductAddToCart>
         <ProductDetailDialog product={product}/>
     </>
-    )
-}
+    );
+};
