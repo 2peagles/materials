@@ -16,7 +16,7 @@ export default function SingleProductDesktop({ product, matches }) {
     const handleMouseLeave = ()=>{
         setShowOptions(false);
     }
-    const [ProductDetailDialog, showProductDetailDialog, closeProductDetailDialog]
+    const [ProductDetailDialog, showProductDetailDialog]
         = useDialogModal(ProductDetail);
 return (
         <>

@@ -10,7 +10,7 @@ import ProductDetail from '../ProductDetail';
 
 
 export default function SingleProduct({product, matches, onAddToCart}) {
-    const [ProductDetailDialog, showProductDetailDialog, closeProductDialog]=useDialogModal(ProductDetail);
+    const [ProductDetailDialog, showProductDetailDialog]=useDialogModal(ProductDetail);
 
     return(
         <>

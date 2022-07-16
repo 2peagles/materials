@@ -1,9 +1,7 @@
-import { Typography, useMediaQuery } from '@mui/material';
-import { useTheme } from '@mui/material/styles';
+import { Typography } from '@mui/material';
 import { BannerContainer, BannerContent, BannerTitle, BannerDescription, BannerImage, BannerShopButton} from '../../styles/Banner';
+
 export default function Banner() {
-    const theme = useTheme();
-    const matches = useMediaQuery(theme.breakpoints.down('md'));
     return (
     <BannerContainer>
             <BannerImage src='/Images/pantstwo.jpg' alt='three pairs of colored jeans'></BannerImage>
