@@ -8,7 +8,7 @@ export default function ProductMeta({product, matches}){
             {product.name}
          </Typography>
          <Typography variant={matches ? 'caption' : 'body1 '}> 
-            ${product.price}
+            {product.price.formatted_with_symbol}
          </Typography>
       </ProductMetaWrapper>
     );

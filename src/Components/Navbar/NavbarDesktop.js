@@ -2,7 +2,7 @@ import { ListItemText } from "@mui/material";
 import { MyList, NavbarContainer, NavbarHeader } from "../../styles/Navbar";
 import Actions from './Actions';
 
-export default function NavbarDesktop({ matches }) {
+export default function NavbarDesktop({ matches,cart, onEmptyCart, onRemoveFromCart, onUpdateCartQty }) {
     return(
          <NavbarContainer>
             <NavbarHeader> Title </NavbarHeader>
@@ -12,7 +12,11 @@ export default function NavbarDesktop({ matches }) {
                     <ListItemText primary='Children' />
                     <ListItemText primary='Accessories' />
                 </MyList>
-            <Actions matches={matches} />
+        <Actions matches={matches}
+           cart={cart}
+          onUpdateCartQty={onUpdateCartQty}
+          onRemoveFromCart={onRemoveFromCart}
+          onEmptyCart={onEmptyCart} />
           </NavbarContainer>
     );
 }

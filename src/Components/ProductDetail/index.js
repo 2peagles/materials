@@ -27,9 +27,13 @@ const ProductDetailforWrapper = styled(Box)(()=> ({
     maxWidth:500,
     lineHeight:1.5,
 }))
-export default function ProductDetail({ open, onClose, product}){
+export default function ProductDetail({ open, onClose, product, onAddToCart}){
     const theme=useTheme();
     const matches = useMediaQuery(theme.breakpoints.down('md'));
+
+    const handleAddToCart = () => {
+        onAddToCart(product.id, 1);
+    }
 
  return(
     <Dialog
@@ -55,18 +59,18 @@ export default function ProductDetail({ open, onClose, product}){
          <DialogContent >
             <ProductDetailWrapper flexDirection={matches ? 'column' : 'row'}>
                 <Product sx={{mr:4}}>
-                    <ProductImage src={product.image} />
+                     <ProductImage src={product.image?.url} alt={product.name} />
                 </Product>
                 <ProductDetailforWrapper variant='subttile' sx={{ml:4}}>
                     <Typography>Sku 123</Typography>
-                     <Typography>Availablityn:5 in stock</Typography>
+                     <Typography>Availablity:5 in stock</Typography>
                      <Typography sx={{ lineHeight:2}} variant="h4">{product.name}</Typography>
-                     <Typography sx={{ lineHeight: 2 }} variant="h6">$ {product.price}</Typography>
+                     <Typography sx={{ lineHeight: 2 }} variant="h6">   {product.price.formatted_with_symbol}</Typography>
                      <Typography variant='body'>{product.description} {product.description} {product.description} 
                      </Typography>
                      <Box sx={{ mt:4}} display='flex' alignItems='center' >
                         <IncDec/>
-                        <Button variant='contained' sx={{ml:4}}>Add To Cart</Button>
+                         <Button variant='contained' sx={{ ml: 4 }} onClick={handleAddToCart}>Add To Cart</Button>
                      </Box>
                      <Box
                         display='flex'   sx={{ mt:4, color:Color.light}}>

@@ -8,7 +8,8 @@ import FItScreenIcon from '@mui/icons-material/FitScreen';
 import useDialogModal from '../../hooks/useDialogModal';
 import ProductDetail from '../ProductDetail';
 
-export default function SingleProductDesktop({ product, matches }) {
+
+export default function SingleProductDesktop({ product, matches, onAddToCart }) {
     const [showOptions,setShowOptions]=useState(false);
     const handleMouseEnter= () =>{
         setShowOptions(true);
@@ -18,15 +19,18 @@ export default function SingleProductDesktop({ product, matches }) {
     }
     const [ProductDetailDialog, showProductDetailDialog]
         = useDialogModal(ProductDetail);
+    const handleAddToCart = () => {
+        onAddToCart(product.id, 1);
+    }
 return (
         <>
         <Product onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-                <ProductImage src={product.image} />
+            <ProductImage src={product.image?.url} alt={product.name} />
                 <ProductfavButton isFav={0} >
                 <FavoriteIcon color='primary' />
                     </ProductfavButton>
                 {
-                (showOptions && <ProductAddToCart show={showOptions} variant='contained'>
+                (showOptions && <ProductAddToCart show={showOptions} variant='contained' onClick={handleAddToCart}>
                         Add To Cart
                     </ProductAddToCart>)
                 }
@@ -37,7 +41,7 @@ return (
                         </ProductActionButton>
                         <ProductActionButton onClick={() => showProductDetailDialog()}>
                             <Tooltip placement='left' title='Full View'>
-                            <FItScreenIcon  onClick={() => showProductDetailDialog()} />
+                                <FItScreenIcon  onClick={() => showProductDetailDialog()} />
                             </Tooltip>
                         </ProductActionButton>
                     </Stack>

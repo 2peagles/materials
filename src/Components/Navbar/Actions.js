@@ -1,13 +1,14 @@
 import { ListItemButton, ListItemIcon } from "@mui/material";
 import { MyList, ActionsIconsContainerMobile, ActionsIconsContainerDesktop } from "../../styles/Navbar";
-import ShoppingBagTwoToneIcon from '@mui/icons-material/ShoppingBagTwoTone';
+// import ShoppingBagTwoToneIcon from '@mui/icons-material/ShoppingBagTwoTone';
 import PersonIcon from '@mui/icons-material/Person';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import SearchIcon from "@mui/icons-material/Search";
 import { useUIContext } from "../../context/ui";
 import { Color } from "../../styles/theme";
+import CartNav from "../Cart/CartNav";
 
-export default function Actions({matches}){
+export default function Actions({matches,cart, onEmptyCart, onRemoveFromCart,onUpdateCartQty}){
     const Component = matches ? ActionsIconsContainerMobile : ActionsIconsContainerDesktop;
     const { setShowSearchBox } = useUIContext()
     return(
@@ -77,7 +78,12 @@ export default function Actions({matches}){
                          color: matches && Color.secondary
                     }}
                 >
-                        <ShoppingBagTwoToneIcon /> 
+                        {/* <ShoppingBagTwoToneIcon />  */}
+                        <CartNav
+                            cart={cart}
+                            onUpdateCartQty={onUpdateCartQty}
+                            onRemoveFromCart={onRemoveFromCart}
+                            onEmptyCart={onEmptyCart} />
                 </ListItemIcon>
             </ListItemButton>
             </MyList>

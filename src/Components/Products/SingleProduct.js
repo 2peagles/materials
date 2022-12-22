@@ -9,12 +9,15 @@ import useDialogModal from '../../hooks/useDialogModal';
 import ProductDetail from '../ProductDetail';
 
 
-export default function SingleProduct({product, matches, onAddToCart}) {
+export default function SingleProduct({product, matches,onAddToCart}) {
     const [ProductDetailDialog, showProductDetailDialog]=useDialogModal(ProductDetail);
 
+    const handleAddToCart = () => {
+        onAddToCart(product.id, 1);
+    }
     return(
         <>
-            <ProductImage src={product.image} alt={product.name} />
+            <ProductImage src={product.image?.url} alt={product.name} />
             <Product>
             <ProductMeta product={product} matches={matches} />
                 <ProductActionsWrapper>
@@ -33,10 +36,12 @@ export default function SingleProduct({product, matches, onAddToCart}) {
                 </Stack>
             </ProductActionsWrapper>
         </Product>
-            <ProductAddToCart variant='contained' onClick={()=> onAddToCart(product.id, 1)}>
+            <ProductAddToCart variant='contained'  onClick={handleAddToCart}>
             Add to cart 
         </ProductAddToCart>
         <ProductDetailDialog product={product}/>
     </>
     );
 };
+
+// {/* <ProductAddToCart variant='contained' onClick={() => onAddToCart(product.id, 1)}> Add to cart</ProductAddToCart> */}
